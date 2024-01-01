@@ -12,10 +12,14 @@
     <img src="https://img.shields.io/badge/Twitter-blue?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter Badge"/>
   </a>
 </div>
-<h1 align="center">Hi 👋, I'm Thai aka SvnFrs</h1>
-<h3 align="center">A lazy but hard working student from FPT University.</h3>
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=svnfrs&label=Views&color=0e75b6&style=flat" alt="svnfrs" /> </p>
+<h1 align="center">Hi 👋, I'm SvnFrs</h1>
+<p align="center"> <img src="https://komarev.com/ghpvc/?username=svnfrs&label=Views&color=0e75b6&style=flat" alt="svnfrs" /> </p>
+
+<div align="center">
+  <img src="https://media.giphy.com/media/HCkbgKLdLWq3OCV8YM/giphy.gif" width="600" height="300"/>
+</div>
+
 
 - 🌱 I’m currently learning **Anything which would help me reach my goal.**
 
