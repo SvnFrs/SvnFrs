@@ -21,14 +21,15 @@
 </div>
 
 
+### 🐧 About Me :
 - 🌱 I’m currently learning **Anything which would help me reach my goal.**
 
-- 💬 You can ask me about **GNU/Linux, audiophile, DevOps stuffs**
+- 💬 I'm interested to talk about **GNU/Linux, Audio, DevOps stuffs**
 
 - ⚡ Fact **I'm lazy.**
 
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=svnfrs&show_icons=true&locale=en&layout=compact&bg_color=1e1e2e&text_color=cdd6f4&icon_color=cba6f7&title_color=94e2d5" alt="svnfrs" /></p>
+<p align="center"><img  src="https://github-readme-stats.vercel.app/api/top-langs?username=svnfrs&show_icons=true&locale=en&layout=compact&bg_color=1e1e2e&text_color=cdd6f4&icon_color=cba6f7&title_color=94e2d5" alt="svnfrs" /></p>
+<!-- 
+<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=svnfrs&show_icons=true&locale=en&bg_color=1e1e2e&text_color=cdd6f4&icon_color=cba6f7&title_color=94e2d5" alt="svnfrs" /></p> -->
 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=svnfrs&show_icons=true&locale=en&bg_color=1e1e2e&text_color=cdd6f4&icon_color=cba6f7&title_color=94e2d5" alt="svnfrs" /></p>
-
-<p><a href="https://git.io/streak-stats"><img src="https://streak-stats.demolab.com?user=SvnFrs&theme=catppuccin-mocha" alt="GitHub Streak" /></a></p>
+<p align="center"><a href="https://git.io/streak-stats"><img src="https://streak-stats.demolab.com?user=SvnFrs&theme=catppuccin-mocha" alt="GitHub Streak" /></a></p>
