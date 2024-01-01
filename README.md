@@ -1,3 +1,6 @@
+<div id="header" align="center">
+  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNzFuZjBiaHJvNnNiZ3Izc28wMDhjbXZmbTVrcnhjbXE2bnJ5cGRhMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/KDJXUTen4eVM4Qt5WP/giphy.gif" width="100"/>
+</div>
 <h1 align="center">Hi 👋, I'm Thai aka SvnFrs</h1>
 <h3 align="center">A lazy but hard working student from FPT University.</h3>
 
