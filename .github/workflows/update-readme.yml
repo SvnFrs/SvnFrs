@@ -1,0 +1,23 @@
+name: Update README
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Run every hour
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Update README
+        run: |
+          echo "Last updated: $(date)" > README.md
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add README.md
+          git commit -m "Update README with current time"
+          git push
+
