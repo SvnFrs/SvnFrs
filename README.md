@@ -28,7 +28,9 @@
 - 💬 I'm interested to talk about **GNU/Linux, Audio, DevOps stuffs**
 
 - ⚡ Fact **I'm lazy.**
-- Last commit of 2023 lunar year
+
+- Last commit of 2023 lunar year : 23:59:59 09/02/2024
+
 - First commit of 2024 lunar year
 
 <p align="center"><img  src="https://github-readme-stats.vercel.app/api/top-langs?username=svnfrs&show_icons=true&locale=en&layout=compact&bg_color=1e1e2e&text_color=cdd6f4&icon_color=cba6f7&title_color=94e2d5" alt="svnfrs" /></p>
