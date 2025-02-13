@@ -33,6 +33,8 @@
 
 <!-- - First commit of 2024 lunar year : 00:00:01 10/02/2024 -->
 
+[![GitHub Streak](https://svnfrs-github-streak.vercel.app?user=svnfrs)](https://git.io/streak-stats)
+
 <p align="center"><img  src="https://github-readme-stats.vercel.app/api/top-langs?username=svnfrs&show_icons=true&locale=en&layout=compact&bg_color=1e1e2e&text_color=cdd6f4&icon_color=cba6f7&title_color=94e2d5" alt="svnfrs" /></p>
 <!-- 
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=svnfrs&show_icons=true&locale=en&bg_color=1e1e2e&text_color=cdd6f4&icon_color=cba6f7&title_color=94e2d5" alt="svnfrs" /></p> -->
