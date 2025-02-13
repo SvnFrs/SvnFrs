@@ -22,7 +22,8 @@
 <!-- I need some more thing to commit -->
 <!-- Yes I really need to commit -->
 
-### 🐧 About Me :
+### 🐧 About Me
+
 - 🌱 I’m currently learning **Anything which would help me reach my goal.**
 
 - 💬 I'm interested to talk about **GNU/Linux, Audio, DevOps stuffs**
@@ -33,10 +34,10 @@
 
 <!-- - First commit of 2024 lunar year : 00:00:01 10/02/2024 -->
 
-[![GitHub Streak](https://svnfrs-github-streak.vercel.app?user=svnfrs)](https://git.io/streak-stats)
-
 <p align="center"><img  src="https://github-readme-stats.vercel.app/api/top-langs?username=svnfrs&show_icons=true&locale=en&layout=compact&bg_color=1e1e2e&text_color=cdd6f4&icon_color=cba6f7&title_color=94e2d5" alt="svnfrs" /></p>
-<!-- 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=svnfrs&show_icons=true&locale=en&bg_color=1e1e2e&text_color=cdd6f4&icon_color=cba6f7&title_color=94e2d5" alt="svnfrs" /></p> -->
 
-<p align="center"><a href="https://git.io/streak-stats"><img src="https://streak-stats.demolab.com?user=SvnFrs&theme=catppuccin-mocha" alt="GitHub Streak" /></a></p>
+<div align="center">
+  <a href="https://git.io/streak-stats">
+    <img src="https://svnfrs-github-streak.vercel.app?user=svnfrs&theme=catppuccin-mocha" alt="GitHub Streak">
+  </a>
+</div>
