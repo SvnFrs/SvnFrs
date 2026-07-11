@@ -9,6 +9,10 @@
     <a href="mailto:thaidvq.work@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
     <img src="https://komarev.com/ghpvc/?username=svnfrs&label=Profile%20Views&color=94e2d5&style=for-the-badge" alt="Views" />
   </p>
+
+  <a href="https://github.com/SvnFrs/contribution-graph">
+    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&pause=1200&color=94E2D5&center=true&vCenter=true&width=580&lines=git+commit+--date%3D1970-01-01;Certified+Time+Traveler+%F0%9F%95%B0%EF%B8%8F;Committing+since+35+years+before+Git+existed;GIT_AUTHOR_DATE+is+a+suggestion%2C+not+a+fact" alt="Time traveler" />
+  </a>
 </div>
 
 ---
@@ -33,7 +37,7 @@
     /ossssssss/        +ssssooo/-       ───────────────────────────────────────────────────
   `/ossssso+/:-        -:/+osssso+-     ▰▰▰▰▰▰▰▰▰▰▰▰▰  TypeScript / Go / .NET / Linux
  `+sso+:-`                 `.-/+oso:
-`++:.                           `-/+/
+`++:.                           `-/+/   Git Age   : committing since 1970 (35 yrs before Git)
 .`                                 `/
 ```
 
@@ -95,6 +99,25 @@ I'm **profoundly lazy** — which is exactly why I engineer systems to do the ty
 
 ---
 
+### 🕰️ `git log --before="I was born"` — Certified Time Traveler
+
+Scroll my contribution graph back a few decades. You'll catch me committing
+`UNIX` in **1970**, shipping `STAR WARS` in **'77**, founding `GITHUB` in **'08**,
+and open-sourcing `CHATGPT` in **'22**. Every year tab from **1970 → 2022** is a
+different slice of tech & pop-culture history, hand-painted one green square at a time.
+
+It started as *one* commit accidentally dated `1970-01-01`. A reasonable engineer
+runs `git rebase` and moves on. I — being **profoundly lazy** in only the most
+elaborate ways possible — wrote a Go tool to weaponize the accident and backfill
+half a century of fictional glory.
+
+> ⚠️ I have been committing code since **35 years before Git existed**.
+> `GIT_AUTHOR_DATE` is a suggestion, not a fact. Do not trust my `git blame`.
+
+🔍 The scene of the crime: **[SvnFrs/contribution-graph](https://github.com/SvnFrs/contribution-graph)**
+
+---
+
 ### 📊 The Receipts
 
 <div align="center">
@@ -103,6 +126,17 @@ I'm **profoundly lazy** — which is exactly why I engineer systems to do the ty
 
 <div align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=SvnFrs&bg_color=1e1e2e&color=94e2d5&line=94e2d5&point=89b4fa&area=true&area_color=94e2d5&hide_border=true&custom_title=Contribution%20Activity" alt="Activity Graph" />
+</div>
+
+<div align="center">
+  <br/>
+  <sub>🐍 <em>the snake eats my last 12 months — the ancient history lives in the year tabs</em></sub>
+  <br/><br/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/SvnFrs/SvnFrs/output/github-contribution-grid-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/SvnFrs/SvnFrs/output/github-contribution-grid-snake.svg" />
+    <img alt="Snake eating my contribution graph" src="https://raw.githubusercontent.com/SvnFrs/SvnFrs/output/github-contribution-grid-snake.svg" />
+  </picture>
 </div>
 
 ---
