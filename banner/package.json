@@ -1,0 +1,11 @@
+{
+  "name": "neo-noir-banner",
+  "private": true,
+  "description": "Renders the Neo Noir README banner from design tokens and a year of contributions.",
+  "scripts": {
+    "render": "bun render.mjs"
+  },
+  "dependencies": {
+    "fontkit": "^2.0.4"
+  }
+}
