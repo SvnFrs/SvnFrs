@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // Neo Noir README banner: renders banner-night.svg and banner-paper.svg from the
-// design system's tokens.json, its font files and a year of contributions.
+// design system's tokens.json, its font files and a year of contributions, plus the
+// divider-* and end-* sheets that close each README section.
 //
 // Why every word is a <path>: raw.githubusercontent.com serves SVGs with
 // `content-security-policy: default-src 'none'; style-src 'unsafe-inline'`,
@@ -99,6 +100,23 @@ function text(str, { family = "ui", vars, size = 12, x = 0, y = 0, tracking = 0,
   return { d, width, x0 };
 }
 const T = (fill, t, extra = "") => `<path fill="${fill}"${extra} d="${t.d}"/>`;
+const ui = (s, o) => text(s, { family: "ui", vars: { wght: 400 }, ...o });
+const mono = (s, o) => text(s, { family: "map", vars: { wght: 700, wdth: 112.5 }, ...o });
+
+/* ---------- pieces the banner shares with the divider ---------- */
+const ASH = `<filter id="ash" x="-2%" y="-30%" width="104%" height="160%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="5"/><feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -2.2 0 0 0 1.75"/><feComposite in="SourceGraphic" operator="in"/><feGaussianBlur stdDeviation="0.3"/></filter>`;
+// The dry brush, drawn in a 1000x40 box; BRUSH_X is where its ink starts and ends in that box.
+const brush = (c, x, y, w, h) => `<svg x="${x}" y="${y}" width="${w}" height="${h}" viewBox="0 0 1000 40" preserveAspectRatio="none" overflow="visible"><path d="${marks.brush}" fill="${c("ash")}" filter="url(#ash)"/></svg>`;
+const BRUSH_X = (() => {
+  const xs = marks.brush.match(/-?[\d.]+/g).filter((_, i) => i % 2 === 0).map(Number);
+  return [Math.min(...xs), Math.max(...xs)];
+})();
+// Scale bar: five 24x8 segments, alternately filled, "0" and "5 km" under it.
+function scaleBar(c, x, y) {
+  const out = [0, 1, 2, 3, 4].map((k) => `<rect x="${x + k * 24}" y="${y}" width="24" height="8" fill="${k % 2 ? "none" : c("ink")}" stroke="${c("ink")}" stroke-width="2"/>`);
+  out.push(T(c("ink-faint"), ui("0", { size: 11, x, y: y + 20 })), T(c("ink-faint"), ui("5 km", { size: 11, x: x + 125, y: y + 20, anchor: "end" })));
+  return out;
+}
 
 /* ---------- a year of contributions ---------- */
 const LEVEL = { NONE: 0, FIRST_QUARTILE: 1, SECOND_QUARTILE: 2, THIRD_QUARTILE: 3, FOURTH_QUARTILE: 4 };
@@ -284,7 +302,6 @@ function banner(theme, year) {
     spot = spot || { anchor: null };
   }
 
-  const ui = (s, o) => text(s, { family: "ui", vars: { wght: 400 }, ...o });
   const out = [];
   out.push(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="Tyler, full-stack and cloud engineer, @SvnFrs. A night map of Ho Chi Minh City; its contours are the last year of commits, surveyed ${surveyed}.">`);
   out.push(`<title>Tyler — full-stack &amp; cloud engineer · @SvnFrs</title>`);
@@ -295,7 +312,7 @@ function banner(theme, year) {
   out.push(`<defs>
 <filter id="gn" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="3" stitchTiles="stitch"/><feColorMatrix values="2.6 0 0 0 -.8 2.6 0 0 0 -.8 2.6 0 0 0 -.8 0 0 0 0 1"/></filter>
 <pattern id="gp" width="256" height="256" patternUnits="userSpaceOnUse"><rect width="256" height="256" filter="url(#gn)"/></pattern>
-<filter id="ash" x="-2%" y="-30%" width="104%" height="160%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="5"/><feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -2.2 0 0 0 1.75"/><feComposite in="SourceGraphic" operator="in"/><feGaussianBlur stdDeviation="0.3"/></filter>
+${ASH}
 <filter id="sig" x="-6%" y="-6%" width="112%" height="112%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" seed="4" result="warp"/><feDisplacementMap in="SourceGraphic" in2="warp" scale="1.6" xChannelSelector="R" yChannelSelector="G" result="edge"/><feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" seed="9" result="speck"/><feColorMatrix in="speck" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -7 0 0 0 5.9" result="ink"/><feComposite in="edge" in2="ink" operator="in"/></filter>
 <radialGradient id="mist"><stop offset="0" stop-color="${mist.hex}" stop-opacity=".22"/><stop offset=".55" stop-color="${mist.hex}" stop-opacity=".14"/><stop offset="1" stop-color="${mist.hex}" stop-opacity="0"/></radialGradient>
 <linearGradient id="key" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${key.hex}" stop-opacity="${key.a.toFixed(3)}"/><stop offset=".4" stop-color="${key.hex}" stop-opacity="0"/></linearGradient>
@@ -328,7 +345,7 @@ function banner(theme, year) {
   // The name, the brush under it, the signature beside it.
   const name = text("Tyler", { family: "display", vars: { wght: 400, opsz: 96 }, size: 184, x: 58, y: 232, tracking: -0.02 });
   out.push(T(c("ink"), name));
-  out.push(`<svg x="56" y="288" width="520" height="14" viewBox="0 0 1000 40" preserveAspectRatio="none" overflow="visible"><path d="${marks.brush}" fill="${c("ash")}" filter="url(#ash)"/></svg>`);
+  out.push(brush(c, 56, 288, 520, 14));
   const sx = r2(name.x0 + name.width + 22), glyph = 52 / 100;
   out.push(`<g transform="translate(${sx} 120) scale(${glyph})" fill="${c("ink")}" filter="url(#sig)"><path d="${marks.signature["國"]}"/><path transform="translate(0 104)" d="${marks.signature["泰"]}"/></g>`);
   // Lead and the one annotation.
@@ -338,10 +355,8 @@ function banner(theme, year) {
   out.push(T(c("accent"), ui("@SvnFrs", { size: 13, x: 58, y: 372 })));
   out.push(T(c("ink-faint"), ui("tyler-void.dev", { size: 13, x: 162, y: 372 })));
   // Scale bar.
-  [0, 1, 2, 3, 4].forEach((k) => out.push(`<rect x="${420 + k * 24}" y="358" width="24" height="8" fill="${k % 2 ? "none" : c("ink")}" stroke="${c("ink")}" stroke-width="2"/>`));
-  out.push(T(c("ink-faint"), ui("0", { size: 11, x: 420, y: 378 })), T(c("ink-faint"), ui("5 km", { size: 11, x: 545, y: 378, anchor: "end" })));
+  out.push(...scaleBar(c, 420, 358));
   // Legend.
-  const mono = (s, o) => text(s, { family: "map", vars: { wght: 700, wdth: 112.5 }, ...o });
   out.push(`<rect x="820" y="262" width="340" height="${box}" fill="${c("ink")}"/>`);
   out.push(T(c("ink"), mono("LEGEND", { size: 12, x: 821, y: 284 })));
   // A legend says what each symbol means, so the contours get a row of their own.
@@ -369,6 +384,34 @@ function banner(theme, year) {
   return { svg: out.join("\n"), surveyed, peak: peakLabel };
 }
 
+/* ---------- divider and end sheets ---------- */
+// These sit straight on GitHub's page (#0d1117 dark, #ffffff light): no ground, no grain, nothing moves.
+function divider(theme) {
+  const c = (n) => color(n, theme);
+  // The banner's scale bar, then the dry brush trailing off to x=1180, level with the bar.
+  const from = 2 + 125 + px("space-5"), k = (1180 - from) / (BRUSH_X[1] - BRUSH_X[0]);
+  return [
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} 48" width="${W}" height="48" aria-hidden="true">`,
+    `<defs>${ASH}</defs>`,
+    ...scaleBar(c, 2, 14),
+    brush(c, r2(from - BRUSH_X[0] * k), 11, r2(1000 * k), 14),
+    `</svg>`,
+  ].join("\n");
+}
+function endSheet(theme) {
+  const c = (n) => color(n, theme);
+  const slab = px("stroke-slab"), hair = px("stroke-hair");
+  return [
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} 56" width="${W}" height="56" role="img" aria-label="End of sheet 01. 10°46′N 106°42′E.">`,
+    // The neatline once more: thick, then thin 6px under it.
+    `<rect width="${W}" height="${slab}" fill="${c("line-strong")}"/>`,
+    `<rect y="${slab + 6}" width="${W}" height="${hair}" fill="${c("line")}"/>`,
+    T(c("ink-muted"), mono("END OF SHEET 01", { size: 12, y: 40 })),
+    T(c("ink-faint"), ui("10°46′N 106°42′E", { size: 12, x: W, y: 40, anchor: "end" })),
+    `</svg>`,
+  ].join("\n");
+}
+
 /* ---------- run ---------- */
 const token = process.env.GITHUB_TOKEN;
 let year;
@@ -380,9 +423,14 @@ if (USER && token) {
   year = JSON.parse(fs.readFileSync(DATA, "utf8"));
 }
 fs.mkdirSync(OUT, { recursive: true });
+const write = (name, svg, note = "") => {
+  const file = path.join(OUT, name);
+  fs.writeFileSync(file, svg);
+  console.log(`${file}  ${(svg.length / 1024).toFixed(1)} KB${note}`);
+};
 for (const theme of ["night", "paper"]) {
   const { svg, surveyed, peak } = banner(theme, year);
-  const file = path.join(OUT, `banner-${theme}.svg`);
-  fs.writeFileSync(file, svg);
-  console.log(`${file}  ${(svg.length / 1024).toFixed(1)} KB  surveyed ${surveyed}  peak ${peak}`);
+  write(`banner-${theme}.svg`, svg, `  surveyed ${surveyed}  peak ${peak}`);
+  write(`divider-${theme}.svg`, divider(theme));
+  write(`end-${theme}.svg`, endSheet(theme));
 }

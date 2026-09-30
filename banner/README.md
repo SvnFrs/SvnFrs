@@ -1,6 +1,6 @@
 # Neo Noir banner
 
-Renders `banner-night.svg` and `banner-paper.svg` for the @SvnFrs profile README: the Neo Noir map sheet, with its contour lines surveyed from the last 365 days of contributions.
+Renders `banner-*`, `divider-*` and `end-*` (Night and Paper each) for the @SvnFrs profile README: the Neo Noir map sheet, with its contour lines surveyed from the last 365 days of contributions.
 
 ```sh
 bun install
@@ -23,6 +23,9 @@ Output goes to `out/` (`--out` to change it).
 - The terrain: each day's activity is a hill at its place in GitHub's grid (a week per column, Sunday on top), smoothed, plus a little seeded noise so empty stretches still read as ground. Fourteen contour intervals, every fifth an index line.
 - A spot height (▲ with the date) on the busiest day, but only when that day lands on open ground; otherwise it is left out.
 - "SURVEYED <last day>" in the sheet refs, and a legend row saying what the contours are.
+- `divider-*.svg` (1200×48): the banner's scale bar, then the dry brush trailing to x=1180. Closes each README section.
+- `end-*.svg` (1200×56): the thick-and-thin neatline, then END OF SHEET 01 and the coordinates. Closes the last section.
+- The divider and end sheets are transparent (they sit on GitHub's own page colour), with no grain and nothing moving. Night uses the night tokens, Paper the paper tokens.
 - One moving thing: film grain, five frames per 420 ms. `prefers-reduced-motion` stops it when the file is opened directly, but Chromium ignores that inside an `<img>`; use `--still` to be certain.
 
 Font licences are in `design/licenses/` (SIL OFL 1.1).
