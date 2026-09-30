@@ -19,6 +19,7 @@ LEGEND                                            1:25 000
 ■   Zero-to-one     NewlySight, computer-vision PoC
 ━━  Demolition      a 10-year .NET monolith, FPT Software
 □   Pipelines       100k+ transactions/day into Snowflake
+■   Retrieval       Vietnamese RAG, measured, not demoed
 ≈   Terrain         Proxmox, custom-compiled Arch kernels
 ━━  Method          spec-driven development + BMAD agents
 □   Stack           .NET · Go · TypeScript · Python · Next.js
